@@ -11,7 +11,9 @@
 <script>
     //Create EventListener
     const loadText = () => {
-        console.log('btn clicked')
+        const xhr = new XMLHttpRequest();
+        // OPEN - type, url/filename, async or not (boolean)
+        console.log(xhr)
     }
     document.getElementById('button').addEventListener('click', loadText)
 </script>
