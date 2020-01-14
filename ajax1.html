@@ -16,7 +16,7 @@
         xhr.open('GET', 'sample.txt', true)
 
         console.log('readystate: ', xhr.readyState)
-        
+
         // OPTIONAL METHOD FOR LOADERS
         xhr.onprogress = () => console.log('ON PROGRESS READYSTATE', xhr.readyState)
         // added onprogress method used for loaders, runs only when readyState === 3
@@ -29,10 +29,13 @@
         //         // console.log(xhr.responseText)
         //     }
         // }
-        
+
         xhr.onload = () => {
             console.log('ONLOAD RESPONSE: ', xhr.readyState)
+            document.querySelector('body').innerText = xhr.responseText
         }
+
+        xhr.onerror = () => {throw Error('Request error')}
         // Comparing onload to readystatechange methods
         // on load runs on 1 and 4 readystate values
         // onreadystatechange runs on 1,2,3,4 readystate values
