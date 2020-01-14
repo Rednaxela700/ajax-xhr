@@ -11,6 +11,6 @@
 - Node HTTP
 - Prototype
 - Superagent
-- Fetch API
+- Fetch API (fully implemented in FFox & Chrome, not sure about other browsers)
 - Axios
 - jQuery
