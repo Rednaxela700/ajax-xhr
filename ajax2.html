@@ -14,5 +14,39 @@
         <h2>Users</h2>
         <div id="users"></div>
     </div>
+    <script>
+        function loadUser() {
+            debugger
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'user.json', true)
+
+
+            xhr.onload = function () {
+                console.log(xhr.status)
+                if (xhr.status == 200) {
+
+                    const user = JSON.parse(xhr.responseText);
+
+                    let output = '';
+                    output += `<ul>
+                            <li>
+                                ID: ${user.id}
+                            </li>
+                            <li>
+                                Name: ${user.name}
+                            </li>
+                            <li>
+                                Email: ${user.email}
+                            </li>
+                        </ul>`
+                        document.getElementById("user").innerHTML = output
+                }
+            }
+        xhr.send();
+        }
+
+        document.getElementById('button1').addEventListener('click', loadUser);
+    </script>
 </body>
+
 </html>
