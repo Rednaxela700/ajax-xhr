@@ -16,6 +16,10 @@
         xhr.open('GET', 'sample.txt', true)
 
         console.log('readystate: ', xhr.readyState)
+        
+        // OPTIONAL METHOD FOR LOADERS
+        xhr.onprogress = () => console.log('ON PROGRESS READYSTATE', xhr.readyState)
+        // added onprogress method used for loaders, runs only when readyState === 3
 
         // xhr.onreadystatechange = () => {
 
@@ -25,6 +29,7 @@
         //         // console.log(xhr.responseText)
         //     }
         // }
+        
         xhr.onload = () => {
             console.log('ONLOAD RESPONSE: ', xhr.readyState)
         }
