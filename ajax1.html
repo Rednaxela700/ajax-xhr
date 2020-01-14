@@ -13,7 +13,13 @@
     const loadText = () => {
         const xhr = new XMLHttpRequest();
         // OPEN - type, url/filename, async or not (boolean)
-        console.log(xhr)
+        xhr.open('GET', 'sample.txt', true)
+        
+        xhr.onload = () => {
+            if(this.status === 200) { //if xhr.status is ok
+                
+            }
+        }
     }
     document.getElementById('button').addEventListener('click', loadText)
 </script>
