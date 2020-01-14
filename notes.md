@@ -1,4 +1,5 @@
 # XmlHttpRequest (XHR) Object
+
 - API in the form of an object
 - Provided by browser's JS enviroment
 - Methods transfer data between client/server
