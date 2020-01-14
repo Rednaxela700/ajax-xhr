@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajax 1 - Text file</title>
 </head>
+
 <body>
     <button id="button">Get text file</button>
 </body>
@@ -31,11 +33,17 @@
         // }
 
         xhr.onload = () => {
-            console.log('ONLOAD RESPONSE: ', xhr.readyState)
-            document.querySelector('body').innerText = xhr.responseText
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log('ONLOAD RESPONSE: ', xhr.readyState)
+                document.querySelector('body').innerText = xhr.responseText
+            } else if (xhr.status == 404) {
+                document.querySelector('body').innerText = 'Couldn\'t connect to server, status 404'
+            }
         }
 
-        xhr.onerror = () => {throw Error('Request error')}
+        xhr.onerror = () => {
+            throw Error('Request error')
+        }
         // Comparing onload to readystatechange methods
         // on load runs on 1 and 4 readystate values
         // onreadystatechange runs on 1,2,3,4 readystate values
@@ -55,4 +63,5 @@
     }
     document.getElementById('button').addEventListener('click', loadText)
 </script>
+
 </html>
