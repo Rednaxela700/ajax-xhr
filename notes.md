@@ -14,3 +14,11 @@
 - Fetch API (fully implemented in FFox & Chrome, not sure about other browsers)
 - Axios
 - jQuery
+
+## Running ajax
+
+- Using MAMP Apache Server (inc a little of PHP)
+- Running external API (using a text file or JSON) on any server
+
+1. Create ajax dir in MAMP/htdocs dir
+2. Open in VSCode, create basic html files
