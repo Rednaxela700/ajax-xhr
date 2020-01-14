@@ -14,13 +14,20 @@
         const xhr = new XMLHttpRequest();
         // OPEN - type, url/filename, async or not (boolean)
         xhr.open('GET', 'sample.txt', true)
+        
+        console.log('readystate: ', xhr.readyState)
 
         xhr.onreadystatechange = () => {
+            
+            console.log('readystate: ', xhr.readyState)
+            
             if(xhr.readyState == 4 && xhr.status == 200) {
-                console.log(xhr.responseText)
+                // console.log(xhr.responseText)
             }
         }
-
+        xhr.onload = () => {
+            console.log('ONLOAD RESPONSE: ', xhr.readyState)
+        }
         // readyState values
         // 0: request not initialized
         // 1: server connection established
