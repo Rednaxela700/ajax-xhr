@@ -6,6 +6,13 @@
     <title>Ajax 1 - Text file</title>
 </head>
 <body>
-    
+    <button id="button">Get text file</button>
 </body>
+<script>
+    //Create EventListener
+    const loadText = () => {
+        console.log('btn clicked')
+    }
+    document.getElementById('button').addEventListener('click', loadText)
+</script>
 </html>
