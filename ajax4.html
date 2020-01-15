@@ -6,12 +6,16 @@
     <title>AJAX and PHP forms</title>
 </head>
 <body>
-    <button id="btn">Get name</button>
+    <form method="GET" action="process.php">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name">
+        <button id="btn">Get name</button>
+    </form>
     <script>
         function getName() {
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'process.php', true)
-            xhr.onload = function() {
+            xhr.open('GET', 'process.php?name=Alexander', true)
+            xhr.onload = function () {
                 console.log(xhr.responseText)
             }
             xhr.send()
