@@ -6,9 +6,16 @@
     <title>AJAX and PHP forms</title>
 </head>
 <body>
+    <h2>GET FORM</h2>
     <form method="GET" action="process.php">
         <label for="name">Name: </label>
         <input type="text" name="name" id="name">
+        <button id="btn">Get name</button>
+    </form>
+    <h2>AJAX GET FORM</h2>
+    <form id="getForm">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name1">
         <button id="btn">Get name</button>
     </form>
     <script>
