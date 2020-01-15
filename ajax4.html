@@ -24,6 +24,12 @@
         <input type="text" name="name" id="name">
         <button id="btn">Get name</button>
     </form>
+    <h2>AJAX POST FORM</h2>
+    <form id="postForm">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name2">
+        <button id="btn">Get name</button>
+    </form>
     <script>
         function getName(e) {
             e.preventDefault()
@@ -36,8 +42,22 @@
             }
             xhr.send()
         }
+        function postName(e) {
+            e.preventDefault()
+            const name = document.getElementById('name2').value
+            const params = 'name='+name
+            console.log(name)
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'process.php', true)
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+            xhr.onload = function () {
+                console.log(xhr.responseText)
+            }
+            xhr.send(params)
+        }
         document.getElementById('btn').addEventListener('click', getName)
         document.getElementById('getForm').addEventListener('submit', getName)
+        document.getElementById('postForm').addEventListener('submit', postName)
     </script>
 </body>
 </html>
